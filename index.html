@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全国三级城市联动select选择</title>
+    <style>
+        .select-con {
+            font-size: 0;
+            width: 244px;
+            margin: 0 auto;
+        }
+
+        .select-con select {
+            width: 80px;
+            height: 30px;
+            box-sizing: border-box;
+            font-size: 15px;
+            color: #0b0b0b;
+
+        }
+
+        .select-con select+select {
+            margin-left: 2px;
+        }
+    </style>
+    <script src="./China_city_list.js?v=1"></script>
+</head>
+
+<body>
+    <div class="select-con">
+        <select name="" id="ddl-province"></select>
+        <select name="" id="ddl-city"></select>
+    </div>
+
+    <script src="./city_select.js?v=2"></script>
+    <script>
+        var selectCity = new SelectCity({
+            provinceList: provinceList,
+            province: document.getElementById("ddl-province"),
+            city: document.getElementById("ddl-city"),
+            defaultProvince: "@defaultProvince",
+            defaultCityId:0,//初始化时选中的城市code
+            changeCityFunc : function () {
+
+            }//初始化时要出发的事件
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
